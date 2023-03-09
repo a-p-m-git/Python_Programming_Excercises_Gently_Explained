@@ -10,14 +10,14 @@ def appendToFile(fileName, text):
         f.write(data)
 
 def readFromFile(filename):
-    with open(filename, 'r') as f:
+    with open(filename) as f:
         return f.read()
     
     
     
 
 
-#readFromFile('greet.txt')
+#print(readFromFile('greet.txt'))
 writeToFile('greet.txt', 'Hello!\n')
 appendToFile('greet.txt', 'Goodbye!\n')
 assert readFromFile('greet.txt') == 'Hello!\nGoodbye!\n'
