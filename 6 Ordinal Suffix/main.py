@@ -10,10 +10,34 @@
 
 
 def ordinalSuffix(number):
-    return number , len(str(number))
+    #return number , len(str(number))
     
-    
-    
+    if len(str(number)) > 1:
+        if str(number)[-2:] == "11" or str(number)[-2:] == "12" or str(number)[-2:] == "13":
+            return str(number) + "th"
+        else:
+            if str(number)[-1] == "1":
+                return str(number) + "st"
+            elif str(number)[-1] == "2":
+                return str(number) + "nd"
+            elif str(number)[-1] == "3":
+                return str(number) + "rd"
+            else:
+                return str(number) + "th"
+    else:
+        if str(number)[-1] == "1":
+            return str(number) + "st"
+        elif str(number)[-1] == "2":
+            return str(number) + "nd"
+        elif str(number)[-1] == "3":
+            return str(number) + "rd"
+        else:
+            return str(number) + "th"
+        
+        
+        
+        #return str(number) + "th", number , len(str(number))
+       
     
     """ 
     if len(str(number)) > 2:
