@@ -14,7 +14,7 @@ def ordinalSuffix(number):
     
     if len(str(number)) > 1:
         if str(number)[-2:] == "11" or str(number)[-2:] == "12" or str(number)[-2:] == "13":
-            return str(number) + "th"
+            return str(number) + "th"s
         else:
             if str(number)[-1] == "1":
                 return str(number) + "st"
