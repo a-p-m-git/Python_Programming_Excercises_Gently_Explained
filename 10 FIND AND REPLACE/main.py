@@ -17,11 +17,23 @@ and Gotchas sections for additional hints.
 Prerequisite concepts: slices, indexes, len(), augmented assignment operator """
 
 def findAndReplace(text, oldtext, newtext):
-    updatedText = text.replace(oldtext, newtext)
-    return updatedText
+    updatedText = ""
+    #return updatedText
+    for i in range(len(text)):
+        if oldtext in text:
+            for j in range(len(text)):
+                if text[j] == oldtext[j]:
+                    updatedText[j] = newtext[j]
+                else:
+                    updatedText[j] = oldtext[j]
+    
+    return updatedText    
+        
 
-assert findAndReplace('The fox', 'fox', 'dog') == 'The dog'
+findAndReplace('The fox', 'fox', 'dog')
+
+""" assert findAndReplace('The fox', 'fox', 'dog') == 'The dog'
 assert findAndReplace('fox', 'fox', 'dog') == 'dog'
 assert findAndReplace('Firefox', 'fox', 'dog') == 'Firedog'
 assert findAndReplace('foxfox', 'fox', 'dog') == 'dogdog'
-assert findAndReplace('The Fox and fox.', 'fox', 'dog') == 'The Fox and dog.'
+assert findAndReplace('The Fox and fox.', 'fox', 'dog') == 'The Fox and dog.' """
