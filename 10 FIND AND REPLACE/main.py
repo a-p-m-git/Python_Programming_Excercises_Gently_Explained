@@ -17,17 +17,16 @@ and Gotchas sections for additional hints.
 Prerequisite concepts: slices, indexes, len(), augmented assignment operator """
 
 def findAndReplace(text, oldtext, newtext):
-    updatedText = ""
-    #return updatedText
+    newList = list(text)
     for i in range(len(text)):
-        if oldtext in text:
-            for j in range(len(text)):
-                if text[j] == oldtext[j]:
-                    updatedText[j] = newtext[j]
-                else:
-                    updatedText[j] = oldtext[j]
+        if text[i] == 'f':
+            print(f"{text[i:(i+3)]} - {newList[i:(i+3)]}")
+            for j in range(len(newtext)):
+                newList[i] = newtext[i]
+            
+        
+          
     
-    return updatedText    
         
 
 findAndReplace('The fox', 'fox', 'dog')
